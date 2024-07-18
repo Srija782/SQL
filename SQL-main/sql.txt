@@ -1,0 +1,39 @@
+1.select sum(purch_amt) as total,ord_no from orders group by ord_no
+	Select  sum(purch_amt) from orders 
+2.select avg(purch_amt) from orders
+3.select count(salesman_id),customer_id from orders group by customer_id
+	select count(distinct salesman_id) from orders
+4.SELECT COUNT (*) FROM customer;
+5.SELECT COUNT (ALL grade) FROM customer;
+6.SELECT MAX (purch_amt) FROM orders
+7.SELECT Min (purch_amt) FROM orders
+8.select city,max(grade) from customer group by city;
+9.select max(purch_amt),customer_id from orders group by customer_id
+10.select max(purch_amt),customer_id,ord_date from orders group by customer_id,ord_date
+11.select max(purch_amt),salesman_id from orders where ord_date ='2012-08-17' group by salesman_id
+12.select max(purch_amt),customer_id,ord_date from orders where max(purch_amt)>2000 group by customer_id ,ord_date
+	SELECT customer_id,ord_date,MAX(purch_amt) FROM orders GROUP BY customer_id,ord_date HAVING MAX(purch_amt)>2000.00;
+13.SELECT customer_id,ord_date,MAX(purch_amt) FROM orders GROUP BY customer_id,ord_date HAVING MAX(purch_amt) between 2000.00 and 6000;
+14.SELECT customer_id,ord_date,MAX(purch_amt) FROM orders GROUP BY customer_id,ord_date HAVING MAX(purch_amt) IN(2000 ,3000,5760, 6000);
+15.SELECT customer_id,MAX(purch_amt) 
+FROM orders 
+WHERE customer_id BETWEEN 3002 and 3007 
+GROUP BY customer_id;
+16.SELECT customer_id,max(purch_amt)
+FROM orders 
+WHERE customer_id BETWEEN 3002 and 3007 
+GROUP BY customer_id
+having max(purch_amt) > 1000
+17.SELECT salesman_id,MAX(purch_amt) FROM orders GROUP BY salesman_id HAVING salesman_id BETWEEN 5003 AND 5008;
+18.select count(ord_no) from orders where ord_date='2012-08-17'
+19.SELECT COUNT(*) 
+FROM salesman 
+WHERE city IS NOT NULL;
+20.SELECT ord_date,salesman_id,COUNT(salesman_id) FROM orders GROUP BY ord_date,salesman_id;
+21.SELECT AVG(pro_price) AS "Average Price" 
+   FROM item_mast;
+22.SELECT COUNT(*) AS "Number of Products" 
+  FROM item_mast 
+    WHERE pro_price >= 350;
+23.select avg(pro_price) as average_price ,pro_com from item_mast group by pro_com
+25.select count(emp_idno),emp_dept from emp_details group by emp_dept
